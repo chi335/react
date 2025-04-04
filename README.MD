@@ -1,21 +1,18 @@
-Rendering Element
-리액트 앱을 구성하는 가장 작은 블록들
-React에서 Element는 UI의 가장 작은 단위이며, 화면에 표시될 내용을 담고 있는 JavaScript 객체입니다.
-Element는 HTML의 요소와 비슷하지만, 실제 DOM 요소가 아닌 가상 DOM(Virtual DOM)에 존재하는 객
-체입니다.
+리액트(React)에서 **엘리먼트(Element)**와 **컴포넌트(Component)**는 UI를 구성하는 핵심 개념으로, 각각 다음과 같은 특징을 가집니다.​
+ko.legacy.reactjs.org
++1
+김정환 블로그
++1
 
-component
-Element를 생성하고 관리하는 함수 또는 클래스입니다.
-Component는 재사용 가능하며, 독립적인 기능을 수행하는 UI의 특정 부분을 나타냅니다
+React Element와 React Component 비교
 
-구분   React Element                               React Component
-정의     UI의 가장 작은 단위                 여러 개의 Element를 포함하는 독립적인 UI 블록
-형태     변경 불가능한 객체                           함수 또는 클래스
-사용법    const element = <h1>Hello</h1>;   function App() { return <h1>Hello</h1>; }
-재사용     불가능                                          가능
-리렌더링   새로운 Element를 생성해야 변경됨     상태(state) 변화에 따라 자동으로 업데이트됨
-Element는 Component에 의해 생성되고, Component는 Element들을 조합하여 UI를 구성합니다.
-Element는 UI의 가장 작은 단위이며, Component는 이러한 Element들을 묶어 재사용 가능한 UI 모듈을 만듭니다.
-Element는 주로 component 내에서 사용되며, component는 여러 개의 element를 반환하여 복잡한 UI를 구성합
-니다
+구분	React Element	React Component
+정의	UI의 가장 작은 단위로, 화면에 표시될 내용을 담고 있는 불변 객체입니다.	여러 개의 Element를 생성하고 관리하는 함수 또는 클래스입니다. 재사용 가능하며 독립적인 UI 블록을 나타냅니다.
+형태	변경 불가능한 객체로, 주로 JSX 문법을 통해 생성됩니다.	함수 또는 클래스 형태로 정의되며, render 메서드를 통해 UI를 반환합니다.
+사용법	jsx<br>const element = <h1>Hello</h1>;
+위 코드는 h1 태그를 가진 엘리먼트를 생성합니다.	jsx<br>function App() {<br> return <h1>Hello</h1>;<br>}<br>
+위 코드는 App 컴포넌트를 정의합니다.
+재사용성	불가능합니다. 생성된 엘리먼트는 변경할 수 없으며, 새로운 내용을 표시하려면 새로운 엘리먼트를 생성해야 합니다.	가능합니다. 컴포넌트는 재사용 가능한 UI 블록으로, 여러 곳에서 동일하게 활용할 수 있습니다.
+리렌더링	엘리먼트는 불변성이므로, 화면에 새로운 내용을 표시하려면 새로운 엘리먼트를 생성하여 렌더링해야 합니다.	상태(state)나 속성(props)의 변화에 따라 자동으로 업데이트되며, 변경된 부분만 효율적으로 리렌더링합니다.
 
+요약하면, 엘리먼트는 리액트 앱을 구성하는 가장 작은 단위로 화면에 표시될 내용을 담고 있는 불변 객체이며, 컴포넌트는 이러한 엘리먼트를 생성하고 관리하는 재사용 가능한 UI 모듈입니다. 컴포넌트는 여러 개의 엘리먼트를 조합하여 복잡한 UI를 구성하며, 상태나 속성의 변화에 따라 동적으로 업데이트됩니다.​
